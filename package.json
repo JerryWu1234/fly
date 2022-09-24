@@ -13,8 +13,12 @@
     "type": "git",
     "url": "git+https://github.com/wulinsheng123/fly.git"
   },
+  "files": [
+    "dist",
+    "bin"
+  ],
   "bin": {
-    "a": "./dist/index.mjs"
+    "a": "./dist/a.mjs"
   },
   "exports": {
     ".": {

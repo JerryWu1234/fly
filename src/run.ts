@@ -2,6 +2,7 @@ import { execaCommand } from 'execa'
 import { inspect } from './inspect'
 export async function runCli() {
   const args = process.argv.slice(2).filter(Boolean)
+  console.log(args)
   try {
     await run()
   }
@@ -13,5 +14,5 @@ export async function runCli() {
 async function run() {
   const cwd = process.cwd()
   const common = await inspect({ cwd })
-  await execaCommand(common, { cwd })
+  // await execaCommand(common, { cwd })
 }

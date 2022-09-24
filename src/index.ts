@@ -1,2 +1,2 @@
-import { runCli } from './run'
-runCli()
+export { runCli } from './run'
+// runCli()

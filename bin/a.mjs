@@ -1,3 +1,7 @@
 #!/usr/bin/env node
 'use strict'
-import '../dist/index.js'
+import { runCli } from '../dist/index.js'
+
+runCli()
+
+console.log('2')

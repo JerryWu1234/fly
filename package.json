@@ -14,7 +14,7 @@
     "url": "git+https://github.com/wulinsheng123/fly.git"
   },
   "bin": {
-    "fly": "./dist/index.mjs"
+    "a": "./dist/index.mjs"
   },
   "exports": {
     ".": {

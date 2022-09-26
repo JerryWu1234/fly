@@ -1,18 +1,20 @@
 import { execaCommand } from 'execa'
+import type { Fn } from './type'
 import { inspect } from './inspect'
-export async function runCli() {
+import type { Agent } from './agent'
+export async function runCli(fn: Fn) {
   const args = process.argv.slice(2).filter(Boolean)
-  console.log(args)
+  const cwd = process.cwd()
   try {
-    await run()
+    await run(fn, args, cwd)
   }
   catch (error) {
     process.exit(1)
   }
 }
 
-async function run() {
-  const cwd = process.cwd()
-  const common = await inspect({ cwd })
-  // await execaCommand(common, { cwd })
+export async function run(fn: Fn, args: string[], cwd: string) {
+  const agent = await inspect({ cwd })
+  const common = await fn(agent as Agent, args)
+  await execaCommand(common, { stdio: 'inherit', encoding: 'utf-8', cwd })
 }

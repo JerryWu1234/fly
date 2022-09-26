@@ -1,2 +1,2 @@
-export { runCli } from './run'
-// runCli()
+export { Afn } from './command/a'
+export * from './run'

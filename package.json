@@ -18,7 +18,8 @@
     "bin"
   ],
   "bin": {
-    "a": "./dist/a.mjs"
+    "a": "./bin/a.mjs",
+    "sds": "./bin/index.mjs"
   },
   "exports": {
     ".": {

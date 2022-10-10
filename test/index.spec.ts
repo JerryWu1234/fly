@@ -4,10 +4,13 @@ import { Afn, run } from '../src/index'
 test('inspect', async () => {
   const cwdA = `${process.cwd()}/feature/a`
   const resultA = await inspect({ cwd: cwdA })
-  expect(resultA, 'pnpm')
+  expect(resultA).toBe('pnpm')
   const cwdB = `${process.cwd()}/feature/b`
   const resultB = await inspect({ cwd: cwdB })
-  console.log(resultB)
+  expect(resultB).toBe(null)
+  const cwd = `${process.cwd()}`.slice(0, -5)
+  const result = await inspect({ cwd })
+  expect(result).toBe('pnpm')
 })
 
 test('test a command', async () => {

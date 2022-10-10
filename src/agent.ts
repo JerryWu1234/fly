@@ -5,7 +5,6 @@ export const LOCKS: Record<string, Agent> = {
   'pnpm-lock.yaml': 'pnpm',
   'yarn.lock': 'yarn',
   'package-lock.json': 'npm',
-  'npm-shrinkwrap.json': 'npm',
 }
 
 export const INIT = {
@@ -17,10 +16,12 @@ export const INIT = {
 
 export const AGENT = {
   a: {
-    npm: 'npm',
-    yarn: 'yarn',
-    pnpm: 'pnpm',
-    bun: 'bun',
+    install: {
+      npm: 'npm install',
+      yarn: 'yarn add',
+      pnpm: 'pnpm install',
+      bun: 'bun install',
+    },
   },
   b: {},
   c: {},

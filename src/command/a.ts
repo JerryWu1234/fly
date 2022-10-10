@@ -8,7 +8,7 @@ export const Afn: Fn = (agent: Agent, args: string[]) => {
   if (args.length === 0)
     return INIT[agent]
 
-  const get_agent = AGENT_NAME[agent]
+  const get_agent = AGENT_NAME.install[agent]
   return `${get_agent} ${args.join(' ')}`
 }
 

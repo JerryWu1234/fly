@@ -14,7 +14,13 @@ export async function runCli(fn: Fn) {
 }
 
 export async function run(fn: Fn, args: string[], cwd: string) {
-  const agent = await inspect({ cwd })
+  const agent = await inspect({ cwd }) || '2323'
   const common = await fn(agent as Agent, args)
-  await execaCommand(common, { stdio: 'inherit', encoding: 'utf-8', cwd })
+  await execute(common, cwd)
+  return common
+}
+
+async function execute(command: string, cwd: string) {
+  if (process.env.NODEDEV !== 'debug')
+    await execaCommand(command, { stdio: 'inherit', encoding: 'utf-8', cwd })
 }

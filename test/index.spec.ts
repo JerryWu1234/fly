@@ -2,9 +2,9 @@ import { expect, test } from 'vitest'
 import { inspect } from '../src/inspect'
 import { Afn, run } from '../src/index'
 test('inspect', async () => {
-  const cwd = `${process.cwd()}/feature`
+  const cwd = `${process.cwd()}`.slice(0, -5)
   const result = await inspect({ cwd })
-  expect(result, 'pnpm')
+  expect(result).toBe('pnpm')
 })
 
 test('test a command', async () => {

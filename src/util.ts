@@ -8,7 +8,7 @@ export function detectRepeatCmd(agent: string) {
       : `command -v ${agent}`)
     return true
   }
-  catch {
+  catch (e) {
     return false
   }
 }

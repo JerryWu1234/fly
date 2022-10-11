@@ -19,7 +19,7 @@
   ],
   "bin": {
     "a": "./bin/a.mjs",
-    "sds": "./bin/index.mjs"
+    "u": "./bin/u.mjs"
   },
   "exports": {
     ".": {

@@ -4,4 +4,4 @@ export interface InspectOpt {
   cwd: string
 }
 
-export type Fn = (agent: Agent, args: string[]) => Promise<any> | string | undefined
+export type Fn = (agent: Agent, args: string[], cwd?: string) => Promise<any> | string | undefined

@@ -12,6 +12,7 @@ export async function runCli(fn: Fn) {
     await run(fn, args, cwd)
   }
   catch (error) {
+    console.error(error)
     process.exit(1)
   }
 }
@@ -33,9 +34,10 @@ export async function run(fn: Fn, args: string[], cwd: string) {
       const c = `npm install ${version} -g`
       await execute(c, cwd)
     }
+
     agent = version as Agent
   }
-  const common = await fn(agent as Agent, args)
+  const common = await fn(agent as Agent, args, cwd)
   await execute(common, cwd)
   return common
 }

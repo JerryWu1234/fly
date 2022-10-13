@@ -1,5 +1,7 @@
 import { execSync } from 'child_process'
 import os from 'os'
+import { resolve } from 'path'
+import { readFileSync, statSync } from 'fs'
 
 export function detectRepeatCmd(agent: string) {
   try {
@@ -11,4 +13,12 @@ export function detectRepeatCmd(agent: string) {
   catch (e) {
     return false
   }
+}
+
+export function getPackageJson(cwd: string) {
+  let path = resolve(cwd, 'package.json')
+  if (statSync(cwd).isFile())
+    path = resolve(cwd, '../package.json')
+
+  return JSON.parse(readFileSync(path, 'utf-8') || '{}')
 }

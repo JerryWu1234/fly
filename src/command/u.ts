@@ -6,7 +6,7 @@ const AGENT_NAME = AGENT[NAME]
 
 export const Ufn: Fn = (agent: Agent, args: string[]) => {
   if (args.length === 0) {
-    console.error('No arg')
+    console.error('please input arg')
     process.exit(0)
   }
   const get_agent = AGENT_NAME[agent]

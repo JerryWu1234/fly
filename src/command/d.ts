@@ -6,7 +6,7 @@ import { getStorage, setStorage } from '../storage'
 const NAME = 'r'
 const AGENT_NAME = AGENT[NAME]
 
-export const Rfn: Fn = (agent: Agent, args: string[], cwd?: string) => {
+export const Dfn: Fn = (agent: Agent, args: string[], cwd?: string) => {
   const storage = getStorage()
   const json = getPackageJson(cwd as string)
   if (args.length === 0 && !storage[json.name]) {

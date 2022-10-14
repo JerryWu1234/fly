@@ -2,7 +2,7 @@ import { expect, test } from 'vitest'
 import { inspect } from '../src/inspect'
 import { Afn, Ufn, run } from '../src/index'
 import { getPackageJson } from '../src/util'
-import { recordCommand } from '../src/command/r'
+import { recordCommand } from '../src/command/d'
 test('inspect', async () => {
   const cwdA = `${process.cwd().includes('test') ? process.cwd() : `${process.cwd()}/test`}/feature/a`
   const resultA = await inspect({ cwd: cwdA })

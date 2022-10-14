@@ -19,6 +19,7 @@
   ],
   "bin": {
     "a": "./bin/a.mjs",
+    "r": "./bin/r.mjs",
     "u": "./bin/u.mjs"
   },
   "exports": {
@@ -33,7 +34,8 @@
     "dev": "tsup --watch",
     "lint": "eslint .",
     "release": "bumpp && npm publish",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",

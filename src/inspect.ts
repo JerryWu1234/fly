@@ -7,6 +7,7 @@ import type { InspectOpt } from './type'
 export async function inspect({ cwd }: InspectOpt) {
   let agent: Agent | null = null
   const lockPath = await findUp(Object.keys(LOCKS), { cwd })
+  console.log(lockPath, cwd)
   if (lockPath) {
     const frontPath = path.dirname(lockPath as string)
     if (frontPath === cwd)

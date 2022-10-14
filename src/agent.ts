@@ -22,12 +22,17 @@ export const AGENT = {
     pnpm: 'pnpm install',
     bun: 'bun install',
   },
-  u: {
+  r: {
     yarn: 'yarn run',
     npm: 'npm run',
     pnpm: 'pnpm run',
     bun: 'bun run',
   },
-  c: {},
+  u: {
+    yarn: 'yarn remove',
+    npm: 'npm uninstall',
+    pnpm: 'pnpm remove',
+    bun: 'bun remove',
+  },
 }
 

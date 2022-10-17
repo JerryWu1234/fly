@@ -1,7 +1,7 @@
 {
   "name": "fly-command",
   "type": "module",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "packageManager": "pnpm@7.4.0",
   "description": "",
   "main": "./dist/index.mjs",
@@ -20,7 +20,8 @@
   "bin": {
     "a": "./bin/a.mjs",
     "d": "./bin/d.mjs",
-    "u": "./bin/u.mjs"
+    "u": "./bin/u.mjs",
+    "p": "./bin/p.mjs"
   },
   "exports": {
     ".": {

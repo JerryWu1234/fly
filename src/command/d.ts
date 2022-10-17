@@ -25,7 +25,7 @@ export const Dfn: Fn = (agent: Agent, args: string[], cwd?: string) => {
 export function recordCommand(agent: Agent, args: string[], cwd: string, mergeObject: Record<string, any>) {
   const json = getPackageJson(cwd)
   let returnVal: Record<string, any> = {}
-  if (mergeObject[json.name]) {
+  if (mergeObject[json.name] && args.length === 0) {
     return mergeObject
   }
   else {

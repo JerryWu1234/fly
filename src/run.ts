@@ -9,6 +9,14 @@ export async function runCli(fn: Fn) {
   const args = process.argv.slice(2).filter(Boolean)
   const cwd = process.cwd()
   try {
+    if (args.length === 1 && (args[0] === '--help' || args[0] === '-h')) {
+      console.log('use the right package manager\n')
+      console.log('a: install package')
+      console.log('d: run command')
+      console.log('u: uninstall package')
+      console.log('p: update package\n')
+      process.exit(0)
+    }
     await run(fn, args, cwd)
   }
   catch (error) {

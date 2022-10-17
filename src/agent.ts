@@ -34,5 +34,11 @@ export const AGENT = {
     pnpm: 'pnpm remove',
     bun: 'bun remove',
   },
+  p: {
+    yarn: 'yarn upgrade',
+    npm: 'npm update',
+    pnpm: 'pnpm update',
+    bun: null,
+  },
 }
 
